@@ -8,7 +8,14 @@ import * as $ from 'jquery';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  animationNumber: number;
+  animationList = ['bounceInLeft', 'rubberBand', 'shake', 'slideInLeft', 'rollIn', 'wobble', 'swing'];
+  animationName: string;
+
+  constructor() {
+    this.animationNumber = Math.floor(Math.random() * 6) + 1;
+    this.animationName = this.animationList[this.animationNumber];
+  }
 
   ngOnInit() {
     $(window).on('resize', function () {
