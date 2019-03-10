@@ -1,0 +1,77 @@
+$margin: 15px;
+$desktop: 780px;
+$tablet: 569px;
+
+@mixin mobile {
+    @media (max-width: 568px) {
+        @content;
+    }
+};
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+.background {
+    background-color: #FEFEFE;
+    margin-right: 6em;
+    border-bottom-right-radius: 30px;
+    height: 80%;
+    box-shadow: 3px 0px 40px 3px #ccc;
+    padding: 2em;
+
+    @include mobile {
+        margin-right: 0em;
+        height: 100%;
+    }
+
+    @include tablet {
+        margin-right: 2em;
+    }
+
+    @include desktop {
+        margin-right: 6em;
+    }
+}
+
+.main {
+
+    @include tablet {
+        display: grid;
+        grid-template-columns: 50% auto;
+        grid-gap: 1em;
+        grid-template-areas: "nav phone"
+    }
+
+    .nav {
+        margin-top: $margin;
+        text-align: center;
+        margin-bottom: $margin;
+
+        @include tablet {
+            grid-area: nav;
+            text-align: left;
+            display: grid;
+            height: 40px;
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+
+    .phone {
+        margin-top: $margin;
+        text-align: center;
+
+        @include tablet {
+            grid-area: phone;
+            height: 100px;
+        }
+    }
+}
