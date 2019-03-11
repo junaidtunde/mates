@@ -38,6 +38,7 @@ $tablet: 569px;
     }
 
     @include desktop {
+        padding-top: 0.2em;
         margin-right: 6em;
     }
 }
@@ -67,12 +68,12 @@ $tablet: 569px;
             text-align: left;
             display: grid;
             align-items: center;
-            justify-items: center;
-            grid-template-columns: 1fr 2fr 2fr 1fr;
+            justify-items: start;
+            grid-template-columns: 1fr 2fr 2fr 2fr;
         }
 
         @include desktop {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: 1fr 2fr 2fr 2fr;
         }
 
         a {
@@ -87,7 +88,7 @@ $tablet: 569px;
         }
 
         a:hover {
-            color: #FA2900;
+            color: #00DBAB;
         }
 
     }
