@@ -24,7 +24,7 @@ $tablet: 569px;
     background-color: #FEFEFE;
     margin-right: 6em;
     border-bottom-right-radius: 30px;
-    height: 80%;
+    height: auto;
     box-shadow: 3px 0px 40px 3px #ccc;
     padding: 2em;
 
@@ -95,6 +95,7 @@ $tablet: 569px;
 
     .phone {
         margin-top: $margin;
+        margin-bottom: 50px;
         text-align: center;
 
         @include tablet {
