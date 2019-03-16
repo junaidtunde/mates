@@ -1,0 +1,355 @@
+@import "../../variables.scss";
+$roboto: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+@mixin mobile {
+  @media (max-width: 568px) {
+    @content;
+  }
+}
+
+;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+%back-character {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+header {
+      @include tablet {
+        height: 65vh;
+      }
+
+      @include mobile {
+        height: 80vh;
+      }
+
+      @include desktop() {
+        height: 100vh;
+      }
+}
+
+.module {
+  position: relative;
+}
+
+.module::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+
+  background-image: url('../../../assets/images/driver-back.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.module-inside {
+  /* This will make it stack on top of the ::before */
+  position: relative;
+  color: white;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "nav left-over";
+
+    @include tablet {
+        grid-template-columns: 70% auto;
+    }
+
+    @include desktop {
+        grid-template-columns: 50% auto;
+    }
+
+    .left-over {
+      grid-area: left-over;
+      @include mobile {
+        grid-column: 3;
+        grid-row: 2;
+      }
+    }
+
+    .nav {
+      margin-top: $margin;
+      text-align: center;
+      color: white;
+      margin-bottom: $margin;
+      grid-area: nav;
+      text-align: left;
+      display: grid;
+      align-items: center;
+
+      @include tablet {
+        grid-template-columns: repeat(6, 1fr);
+        justify-items: center;
+      }
+
+      @include mobile {
+        grid-column: 1/3;
+        grid-row: 1/2;
+        grid-template-columns: repeat(3, 1fr);
+        margin-left: 2em;
+      }
+
+      a {
+        display: block !important;
+        text-decoration: none;
+        color: white;
+
+        @include mobile {
+          line-height: 2em;
+          font-size: larger;
+        }
+      }
+
+      a:hover {
+        color: $secondary;
+      }
+
+    }
+}
+
+
+.content-rest {
+
+    font-family: $roboto;
+
+    @include tablet {
+        display: grid;
+        grid-template-columns: 50% auto;
+        padding: 0em;
+    }
+
+    @include desktop {
+        padding: 3em;
+    }
+
+    .call {
+        color: white;
+        text-align: center;
+        @include tablet {
+            display: none;
+        }
+    }
+
+    .called {
+        color: white;
+        margin-top: 4em;
+        margin-left: 3em;
+        @include mobile {
+            display: none;
+        }
+    }
+    
+    .right-side {
+
+        display: grid;
+        justify-items: center;
+        text-align: center;
+
+        @include tablet {
+            margin-top: 3em;
+        }
+
+        .img-logo {
+            @include mobile {
+                margin-top: 2em;
+                margin-bottom: 2em;
+            }
+        }
+
+        .houser {
+            margin-top: 2em;
+            @include tablet {
+              margin: 2em 0em;
+            }
+            @include desktop {
+                margin: 2em 7em;
+            }
+        }
+
+        .sign-btn {
+            background-color: $secondary;
+            color: $primary;
+            padding: 4px 30px;
+            border-radius: 4px;
+            margin-top: 30px;
+            font-size: large;
+            font-weight: lighter;
+        }
+    }
+}
+
+.chev {
+    text-align: center;
+    margin-top: 4em;
+    cursor: pointer;
+    @include mobile {
+        margin-top: 2em;
+    }
+}
+
+section {
+    text-align: center;
+    .reason-grid {
+        margin-top: 3em;
+        margin-bottom: 4em;
+        font-family: $roboto;
+        display: grid;
+        @include desktop {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+
+        .holder {
+            height: 30vh;
+            width: 30vh;
+
+            .holder.img {
+                height: 60%;
+            }
+
+            .holder-text {
+                height: 40%;
+                margin-top: 1em;
+            }
+        }
+    }
+
+    .rule {
+        margin: 0px 20em;
+        @include mobile {
+            margin: 0 5em;
+        }
+    }
+
+    .map-holder-container {
+        margin: 2em 0em;
+        display: inline-block;
+        text-align: center;
+        justify-items: center;
+
+        @include desktop {
+            display: inline-flex;
+        }
+
+        .map-holder {
+            height: 50vh;
+            width: 25vw;
+
+            @include mobile {
+              height: auto;
+              width: auto;
+            }
+
+            @include tablet {
+              height: auto;
+              width: auto;
+            }
+
+            @include desktop {
+              height: 50vh;
+              width: 25vw;
+            }
+
+            .map-text {
+                height: 10%;
+                margin-bottom: 1em;
+            }
+
+            .map-img-holder {
+                height: 30vh;
+                width: 30vh;
+                border: 1px solid whitesmoke;
+                border-radius: 50%;
+                padding: 5px;
+
+                @include mobile {
+                    display: none;
+                }
+
+                @include tablet {
+                    display: none;
+                }
+
+                @include desktop {
+                    display: block;
+                }
+
+                .map-img {
+                    @extend %back-character;
+                    background-image: url('../../../assets/images/phone-map.jpg');
+                }
+
+                .map-img-2 {
+                    @extend %back-character;
+                    background-image: url('../../../assets/images/navigate.jpg');
+                }
+
+                .map-img-3 {
+                    @extend %back-character;
+                    background-image: url('../../../assets/images/taffix.jpg');
+                }
+            }
+        }
+    }
+}
+
+.faq {
+  margin: 2em 9em;
+  @include mobile {
+    margin: 2em auto;
+  }
+  @include tablet {
+    margin: 2em 2em;
+  }
+  @include desktop {
+    margin: 2em 9em;
+  }
+  h2 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .qna {
+    text-align: left;
+    font-family: $roboto;
+    padding-left: 8em;
+    padding-right: 8em;
+    margin-bottom: 1em;
+    font-size: 14px;
+
+    @include mobile {
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+  }
+}
+
+.reg-btn {
+  padding: 8px 25px;
+  color: white;
+  background-color: $secondary;
+  border-radius: 8px;
+  font-size: larger;
+  cursor: pointer;
+}
+

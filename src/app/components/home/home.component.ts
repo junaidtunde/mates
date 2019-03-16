@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import * as $ from 'jquery';
 
 @Component({
@@ -12,7 +13,8 @@ export class HomeComponent implements OnInit {
   animationList = ['bounceInLeft', 'rubberBand', 'shake', 'slideInLeft', 'rollIn', 'wobble', 'swing'];
   animationName: string;
 
-  constructor() {
+  constructor(private title: Title) {
+    this.title.setTitle('Home');
     this.animationNumber = Math.floor(Math.random() * 6) + 1;
     this.animationName = this.animationList[this.animationNumber];
   }

@@ -1,0 +1,33 @@
+<div class="main">
+
+  <nav>
+    <a href="" [routerLink]="['/']" routerLinkActive="router-link-active"  class="nav-item">Home</a>
+    <a href="" [routerLink]="['/restaurants']" routerLinkActive="router-link-active"  class="nav-item">Restaurants</a>
+    <a href="" [routerLink]="['/dashers']" routerLinkActive="router-link-active"  class="nav-item">Dashers</a>
+    <a href="" [routerLink]="['/about-us']" routerLinkActive="router-link-active"  class="nav-item">About us</a>
+    <div class="dropdown" style="cursor: pointer; display: inline;">
+      <a class="dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Legal
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+        <button [routerLink]="['/privacy']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Privacy policy</button>
+        <button [routerLink]="['/terms']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Terms of service</button>
+        <button [routerLink]="['/fleet-agreement']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Fleet Agreement</button>
+        <button [routerLink]="['/shipping-policy']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Shipping policy</button>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1 style="margin: 2em auto 10px 2em;">Join the Dashteam <span><img src="assets/images/star.png" style="vertical-align: baseline" height="40px" alt=""></span></h1>
+  </header>
+
+  <section>
+    <p>
+      Dash is an app students use everyday, to order ahead at restaurants, collect points, send gifts and unlock
+      discounts with friends.
+    </p>
+    <span class="job-btn">Apply Here</span>
+  </section>
+
+</div>

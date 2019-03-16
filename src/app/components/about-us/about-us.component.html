@@ -1,3 +1,59 @@
-<p>
-  about-us works!
-</p>
+<div class="main">
+
+  <div class="content">
+    <nav class="nav">
+      <a href="" class="mobile-link" [routerLink]="['/']" routerLinkActive="router-link-active">Home</a>
+      <a href="" [routerLink]="['/restaurants']" routerLinkActive="router-link-active">Restaurants</a>
+      <a href="" [routerLink]="['/dashers']" routerLinkActive="router-link-active">Dashers</a>
+      <a href="" [routerLink]="['/careers']" routerLinkActive="router-link-active">Careers</a>
+      <a href="" [routerLink]="['/about-us']" routerLinkActive="router-link-active">About us</a>
+      <div class="dropdown" style="cursor: pointer; display: inline-block;">
+        <a class="dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Legal
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+          <button [routerLink]="['/privacy']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Privacy policy</button>
+          <button [routerLink]="['/terms']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Terms of service</button>
+          <button [routerLink]="['/fleet-agreement']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Fleet Agreement</button>
+          <button [routerLink]="['/shipping-policy']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Shipping policy</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="left-over"></div>
+  </div>
+
+  <section>
+    <h1 style="text-align: center; margin-top: 1em; margin-bottom: 1em;">About Dash</h1>
+
+    <div class="text-section container">
+      <div style="text-align: left">
+        <h4 style="margin-top: 1em; margin-bottom: 1em;">WHO WE ARE</h4>
+      </div>
+      <div class="body-text">
+        DASH is a technology company transforming the way products move around cities by enabling delivery of anything  to anyone on-demand. Our state of the art technology and Urban Logistics platform connects customers with local couriers who can deliver goods from any store, restaurant or merchant in minutes. We help power local commerce by enabling communities to shop without delay, and empower businesses through our API to offer reliable delivery on-demand.We aim to grow businesses, create jobs, and deliver smiles in the cities we operate in by leveraging our last-mile logistics infrastructure to bring cities within reach.
+      </div>
+      <div style="margin-top: 10px">
+        <h5 style="text-align: left;">Revenue Steam- our main sources of revenue are:</h5>
+        <ul class="listing">
+          <li class="body-text">We make money by charging delivery fees (which is charged according to distance per km)</li>
+          <li class="body-text">We also make money from merchant fees which range from 20% to 30%  of every transaction.</li>
+          <li class="body-text">We charge service fees in cases where we don't have merchant agreements with the merchant a customer orders from, this represents 10% of the total transaction made</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-section container">
+      <div style="text-align: left">
+        <h4 style="margin-top: 2em; margin-bottom: 1em;">HOW  THE PLATFORM WORKS</h4>
+      </div>
+      <div class="body-text">
+        DASH makes use of apps and Api to connect customers to delivery partners / independent couriers who carryout the deliveries  from and for merchants on the platform.
+      </div>
+      <div class="body-text" style="margin-top: 1em; margin-bottom: 3em">
+        Customers have mobile apps to place orders and track their delivery and Delivery Partners accept orders through the driver app which allows them accept orders and navigate easily to the merchants and customers locations.
+      </div>
+    </div>
+  </section>
+
+</div>

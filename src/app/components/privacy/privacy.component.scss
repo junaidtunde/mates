@@ -88,6 +88,11 @@ $roboto: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 
     font-weight: lighter;
 }
 
+.body-text-small {
+    @extend .body-text;
+    font-size: small;
+}
+
 .listing {
     // list-style-type: none;
     li {

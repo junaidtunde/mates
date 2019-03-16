@@ -1,0 +1,71 @@
+@import "../../variables.scss";
+
+@mixin mobile {
+  @media (max-width: 568px) {
+    @content;
+  }
+}
+
+;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+nav {
+    display: inline-block !important;
+    background-color: whitesmoke;
+    width: 100%;
+    padding: 12px 0px;
+    font-weight: bolder;
+
+    .dropdown {
+        margin-left: 3em;
+        @include mobile {
+            margin-left: 0em;
+        }
+    }
+
+    .nav-item {
+        padding: 2em;
+        @include mobile {
+            padding: 10px;
+        }
+    }
+
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        color: $primary;
+    }
+
+    a:hover {
+        color: $secondary;
+    }
+}
+
+section {
+    background-color: whitesmoke;
+    padding: 3em 28em 3em 3em;
+    font-size: 1.1rem;
+
+    @include mobile {
+        padding-right: 3em;
+    }
+
+    .job-btn {
+        padding: 8px 30px;
+        background-color: $secondary;
+        color: $primary;
+        text-align: center;
+        border-radius: 8px;
+    }
+}

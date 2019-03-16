@@ -1,0 +1,193 @@
+<div class="main">
+  <header class="module">
+    <div class="module-inside">
+
+      <div class="content">
+        <nav class="nav">
+          <a href="" class="mobile-link" [routerLink]="['/']" routerLinkActive="router-link-active">Home</a>
+          <a href="" [routerLink]="['/restaurants']" routerLinkActive="router-link-active">Restaurants</a>
+          <a href="" [routerLink]="['/dashers']" routerLinkActive="router-link-active">Dashers</a>
+          <a href="" [routerLink]="['/careers']" routerLinkActive="router-link-active">Careers</a>
+          <a href="" [routerLink]="['/about-us']" routerLinkActive="router-link-active">About us</a>
+          <div class="dropdown" style="cursor: pointer; display: inline-block;">
+            <a class="dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Legal
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+              <button [routerLink]="['/privacy']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Privacy policy</button>
+              <button [routerLink]="['/terms']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Terms of service</button>
+              <button [routerLink]="['/fleet-agreement']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Fleet Agreement</button>
+              <button [routerLink]="['/shipping-policy']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Shipping policy</button>
+            </div>
+          </div>
+        </nav>
+  
+        <div class="left-over"></div>
+      </div>
+
+      <div class="content-rest container">
+
+        <div class="called">
+          <h1 style="font-weight: bolder">Be a Dasher</h1>
+          <h4 style="font-weight: lighter">Earn good money <span style="font-weight: 600;">with your car.</span></h4>
+        </div>
+
+        <div class="right-side">
+          <img class="img-logo" src="assets/images/logo.png" height="150px" alt="">
+
+          <div class="call">
+            <h1 style="font-weight: bolder">Be a Dasher</h1>
+            <h4>Earn good money <span style="font-weight: 900;">with your car.</span></h4>
+          </div>
+
+          <div class="houser">
+            <h4 style="font-weight: lighter">Click on the button below to <span style="font-weight: bolder;">sign up</span> as a driver</h4>
+          </div>
+          <span class="sign-btn animated infinite pulse" style="cursor: pointer;">Register</span>
+
+        </div>
+
+      </div>
+
+      <div class="chev animated infinite delay-1s bounce">
+        <img src="assets/images/chevron.png" height="30px" alt="" (click)="moveToSection()">
+      </div>
+
+    </div>
+  </header>
+
+  <section #section id="section">
+
+    <div style="margin-top: 5em;">
+      <h2>Why Dash?</h2>
+    </div>
+
+    <div class="reason-grid container">
+
+      <div class="holder">
+        <div class="holder-img">
+          <img src="assets/images/chart.png" alt="">
+        </div>
+        <div class="holder-text">
+          <h3 style="font-weight: lighter">Earn money</h3>
+          <p style="font-size: small;">Drive with dash and earn extra income.</p>
+        </div>
+      </div>
+
+      <div class="holder">
+        <div class="holder-img">
+          <img src="assets/images/clock.png" alt="">
+        </div>
+        <div class="holder-text">
+          <h3 style="font-weight: lighter">Drive anytime</h3>
+          <p style="font-size: small;">Work with your own schedule. No minimum hours and no boss.</p>
+        </div>
+      </div>
+
+      <div class="holder">
+        <div class="holder-img">
+          <img src="assets/images/no-fees.png" alt="">
+        </div>
+        <div class="holder-text">
+          <h3 style="font-weight: lighter">No monthly fees</h3>
+          <p style="font-size: small;">No risk, you only pay when you earn</p>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="rule">
+      <hr style="background-color: whitesmoke;">
+    </div>
+
+    <div style="margin-top: 5em;">
+      <h2>How Dash Works?</h2>
+
+      <div class="map-holder-container">
+
+        <div class="map-holder">
+          <div class="map-text">
+            <h3 style="font-weight: lighter; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+              1. Accept the request
+            </h3>
+          </div>
+          <div class="map-img-holder mx-auto">
+            <div class="map-img"></div>
+          </div>
+        </div>
+
+        <div class="map-holder">
+          <div class="map-text">
+            <h3 style="font-weight: lighter; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+              2. Pickup the client
+            </h3>
+          </div>
+          <div class="map-img-holder mx-auto">
+            <div class="map-img-2"></div>
+          </div>
+        </div>
+
+        <div class="map-holder">
+          <div class="map-text">
+            <h3 style="font-weight: lighter; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+              3. Drive to destination
+            </h3>
+          </div>
+          <div class="map-img-holder mx-auto">
+            <div class="map-img-3"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="faq container">
+      <div class="card">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="qna">
+          <h6 style="font-weight: bolder">Q: I don't drive full-time. Can I use Dash for just a few hours a week?</h6>
+          <p>A: Of course, some of our drivers are only active a few hoursduring weekends and make solid part-time income.</p>
+        </div>
+
+        <div class="qna">
+          <h6 style="font-weight: bolder">Q: How do I get paid?</h6>
+          <p>A: Clients pay you in cash or via Dash. We pay out to your bank account every week.</p>
+        </div>
+
+        <div class="qna">
+          <h6 style="font-weight: bolder">Q: How much do I pay Dash?</h6>
+          <p>A: We do not have any monthly fees, so you only pay for finished trips. We usually ask for 10% to 20% of the ride fee, depending on your city. You can get more information by contacting us.</p>
+        </div>
+
+        <div class="qna">
+          <h6 style="font-weight: bolder">Q: How long does it takes to sign up?</h6>
+          <p>A: Submitting your information takes just 5 minutes. After that you will get a 30 minute training in our office. In some
+          cities, we will accept your application remotely once you provide us with all the necessary documents.</p>
+        </div>
+
+        <div class="qna">
+          <h6 style="font-weight: bolder">Q: What if I don't have a smartphone?</h6>
+          <p>A: Our city teams suggest you a budget Android smartphone that you can buy or finance.</p>
+        </div>
+
+        <div class="qna">
+          <h6 style="font-weight: bolder">Q: What if I don't have a car?</h6>
+          <p>A: Our city teams can help you match with our partner fleets or rental companies who offer competitive rates on vehicles
+          that are accepted on our platform. In some cities, longer term drivers can get financing deals from our partners.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <span class="reg-btn">Sign up to drive with Dash</span>
+    </div>
+
+    <div style="margin-top: 3em; margin-bottom: 3em;">
+      <p>Got questions or concerns? <span style="color: #00EA65; cursor: pointer;">Contact us.</span></p>
+    </div>
+
+  </section>
+</div>

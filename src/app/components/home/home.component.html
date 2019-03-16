@@ -2,13 +2,13 @@
   <div class="main">
 
     <section id="ground" class="logo">
-      <div class="animated" [ngClass]="animationName">
+      <div class="animated space-below" [ngClass]="animationName">
         <img src="assets/images/logo.png" class="img-fluid" width="250px" height="250px" alt="">
       </div>
-      <div>
+      <div class="space-below">
         <h1 style="font-weight: lighter; font-size: xx-large;">Dash</h1>
       </div>
-      <div class="stores">
+      <div class="stores space-below">
         <div>
           <img src="assets/images/appstore.png" width="120px" alt="">
         </div>
@@ -24,12 +24,24 @@
 
 
     <nav class="nav">
-      <a class="logolink" style="cursor: pointer">
+      <a class="logolink" [routerLink]="['/']" routerLinkActive="router-link-active"  style="cursor: pointer">
         <img src="assets/images/small logo.png" class="img-fluid" width="30px" height="30px" alt="">
       </a>
-      <a href="">About us</a>
-      <a href="">Legal</a>
-      <a href="">Join us</a>
+      <a href="" [routerLink]="['/restaurants']" routerLinkActive="router-link-active">Restaurants</a>
+      <a [routerLink]="['/dashers']" routerLinkActive="router-link-active"  href="">Dashers</a>
+      <a href="" [routerLink]="['/careers']" routerLinkActive="router-link-active">Careers</a>
+      <a [routerLink]="['/about-us']" routerLinkActive="router-link-active"  href="">About us</a>
+      <div class="dropdown" style="cursor: pointer;">
+        <a class="dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Legal
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+          <button [routerLink]="['/privacy']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Privacy policy</button>
+          <button [routerLink]="['/terms']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Terms of service</button>
+          <button [routerLink]="['/fleet-agreement']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Fleet Agreement</button>
+          <button [routerLink]="['/shipping-policy']" routerLinkActive="router-link-active"  class="dropdown-item" type="button">Shipping policy</button>
+        </div>
+      </div>
     </nav>
 
   </div>

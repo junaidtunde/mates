@@ -1,0 +1,219 @@
+@import "../../variables.scss";
+
+@mixin mobile {
+  @media (max-width: 568px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+.main {
+
+    text-align: center;
+
+    @include tablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "adjust section"
+    }
+
+    section {
+
+        @include tablet {
+            grid-area: section;
+            grid-column: 1/3;
+            grid-row: 2;
+        }
+
+        .floating-image {
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            justify-items: center;
+            border-radius: 40%;
+            margin: 130px 35px 35px 35px;
+
+            @include tablet {
+                margin-top: 35px;
+            }
+        }
+    
+        .float-img {
+            border-radius: 4%;
+            box-shadow: 0px 8px 25px 1px #ccc;
+
+            @include tablet {
+                height: 300px;
+                width: 450px;
+            }
+        }
+    
+        .call-btn {
+            background-color: $secondary;
+            color: $primary;
+            border-radius: 30px;
+            padding: 15px 70px;
+            font-size: larger;
+        }
+
+        .container-down {
+            @include tablet {
+                margin: 10px 3em;
+            }
+            @include desktop {
+                margin: 10px 13em;
+            }
+        }
+
+        .cards {
+
+            @include mobile {
+                display: none !important;
+            }
+
+            margin-top: 6em;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            
+            div {
+                .placard {
+                    height: 40vh;
+                    width: 15vw;
+                    border-radius: 17px;
+                    box-shadow: 0px 8px 25px 1px #ccc;
+                    background-color: #FFFFFF;
+
+                    @include tablet {
+                        width: 25vw;
+                        margin-right: 20px;
+                    }
+
+                    @include desktop() {
+                        width: 15vw;
+                        margin-right: 0px !important;
+                    }
+                }
+            }
+        }
+
+        .partners {
+            margin-top: 10em;
+            .gallery {
+                display: grid;
+                justify-items: center;
+                margin-top: 3em;
+
+                @include tablet {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-row-gap: 2em;
+                    justify-items: center;
+                }
+
+                @include desktop {
+                   grid-template-columns: repeat(3, 1fr);
+                }
+                
+                .partner {
+                    display: grid;
+                    align-items: center;
+                    justify-items: center;
+                    border-radius: 50%;
+                    box-shadow: 0px 3px 15px 0px #ccc;
+                    padding: 1em;
+                    width: 180px;
+                    height: 180px;
+
+                    @include mobile {
+                        margin-bottom: 3em;
+                    }
+                }
+
+                .partner:hover {
+                    box-shadow: 0px 8px 25px 1px #ccc;
+                }
+            }
+        }
+    }
+
+    .adjust-nav {
+        @include tablet {
+            grid-area: adjust;
+            grid-column: 1/3;
+            grid-row: 1/2;
+            display: grid;
+            grid-template-columns: 50% auto;
+            grid-template-areas: "nav rest";
+
+            margin-top: 1em;
+        }
+
+        .rest {
+          grid-area: rest
+        }
+        
+        .nav {
+            margin-top: $margin;
+            text-align: center;
+            margin-bottom: $margin;
+    
+            @include mobile {
+            display: block !important;
+            }
+    
+            .logolink {
+                @include mobile {
+                    display: none !important;
+                }
+            }
+
+            .mobile-link {
+                @include desktop {
+                    display: none !important;
+                }
+            }
+    
+            @include tablet {
+            grid-area: nav;
+            text-align: left;
+            display: grid;
+            align-items: start;
+            justify-items: center;
+            grid-template-columns: repeat(3, 1fr);
+            }
+    
+            @include desktop {
+            grid-template-columns: repeat(6, 1fr);
+            justify-items: center;
+            }
+    
+            a {
+            display: block !important;
+            text-decoration: none;
+            color: $primary;
+    
+            @include mobile {
+                line-height: 2em;
+                font-size: larger;
+            }
+            }
+    
+            a:hover {
+            color: $secondary;
+            }
+    
+        }
+    }
+
+}

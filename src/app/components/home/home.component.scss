@@ -1,6 +1,4 @@
-$margin: 15px;
-$desktop: 780px;
-$tablet: 569px;
+@import "../../variables.scss";
 
 @mixin mobile {
     @media (max-width: 568px) {
@@ -18,6 +16,10 @@ $tablet: 569px;
     @media (min-width: #{$tablet}) {
         @content;
     }
+}
+
+.space-below {
+    margin-bottom: $below;
 }
 
 .background {
@@ -49,37 +51,42 @@ $tablet: 569px;
         display: grid;
         grid-template-columns: 50% auto;
         grid-gap: 1em;
-        grid-template-areas: "nav phone"
-    }
+        grid-template-areas: "nav phone";
+    };
 
     .nav {
         margin-top: $margin;
         text-align: center;
         margin-bottom: $margin;
 
+        @include mobile {
+            display: block !important;
+        }
+
         .logolink {
             @include mobile {
-                display: none;
+                display: none !important;
             }
-        }
+        };
 
         @include tablet {
             grid-area: nav;
             text-align: left;
             display: grid;
             align-items: center;
-            justify-items: start;
-            grid-template-columns: 1fr 2fr 2fr 2fr;
-        }
+            justify-items: center;
+            grid-template-columns: repeat(3, 1fr);
+        };
 
         @include desktop {
-            grid-template-columns: 1fr 2fr 2fr 2fr;
-        }
+            grid-template-columns: repeat(6, 1fr);
+            justify-items: center;
+        };
 
         a {
-            display: block;
+            display: block !important;
             text-decoration: none;
-            color: black;
+            color: $primary;
 
             @include mobile {
                 line-height: 2em;
@@ -88,14 +95,14 @@ $tablet: 569px;
         }
 
         a:hover {
-            color: #00DBAB;
+            color: $secondary;
         }
 
     }
 
     .phone {
-        margin-top: $margin;
-        margin-bottom: 50px;
+        margin-top: $below;
+        margin-bottom: 20px;
         text-align: center;
 
         @include tablet {
